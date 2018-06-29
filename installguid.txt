@@ -1,0 +1,10 @@
+# This script for easy install docker
+#   $ curl -fsSL get.docker.com -o get-docker.sh
+#   $ sh get-docker.sh
+# To add user in Group
+#   $ sudo usermod -aG docker (username)
+
+# install docker machine in linux
+$ base=https://github.com/docker/machine/releases/download/v0.14.0 &&
+  curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/usr/local/bin/docker-machine &&
+  chmod +x /usr/local/bin/docker-machine

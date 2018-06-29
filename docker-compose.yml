@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  website:
+    build: .
+    command: >
+      gunicorn -b 0.0.0.0:8000 --access-logfile -
+      --reload
+      "bulksend.app:create_app()"
+    environment:
+      PYTHONUNBUFFERD: 'true'
+    env_file:
+      - '.env'
+    volumes:
+      - '.:/bulksend'
+    ports:
+      - '8000:8000'
